@@ -1,0 +1,6 @@
+PREFIX ldes: <https://w3id.org/ldes#>
+SELECT ?collection
+WHERE {
+  ?eventstream a ldes:EventStream .
+  BIND (REPLACE(STR(?eventstream), "^.*/([^/]*)$", "$1") as ?collection)
+}
